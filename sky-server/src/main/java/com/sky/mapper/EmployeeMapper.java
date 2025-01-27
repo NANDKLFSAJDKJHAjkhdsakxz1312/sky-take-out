@@ -29,5 +29,10 @@ public interface EmployeeMapper {
     @Update("update employee set status = #{status} where id = #{id}")
     void startOrStart(Integer status, Long id);
 
-    void startOrStop(Employee employee);
+    void update(Employee employee);
+
+    @Select("select * from employee where id = #{id}")
+    Employee updateSelect(Long id);
+
+
 }
