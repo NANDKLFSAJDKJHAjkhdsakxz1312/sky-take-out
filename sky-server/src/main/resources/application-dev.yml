@@ -12,3 +12,6 @@ sky:
     endpoint: oss-cn-hangzhou.aliyuncs.com
     bucket-name: web-frameworkjn131
 
+  redis:
+    host: localhost
+    port: 6379
