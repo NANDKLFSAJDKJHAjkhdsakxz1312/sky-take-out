@@ -85,4 +85,14 @@ public class DishController {
         Set keys = redisTemplate.keys(pattern);
         redisTemplate.delete(keys);
     }
+
+    @PostMapping("/status/{status}")
+    @ApiOperation("起售停售菜品")
+    public Result startOrStop(@PathVariable Integer status,@RequestParam Long id){
+
+        log.info("起售停售菜品："+id+"{}",status==1?"起售":"停售");
+        dishService.startOrStop(status,id);
+        cleanCache("dish_*");
+        return Result.success();
+    }
 }
