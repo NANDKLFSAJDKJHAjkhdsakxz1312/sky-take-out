@@ -49,4 +49,5 @@ public interface OrderMapper {
     Double sumByMap(Map map);
 
 
+    Integer countOrder(Map map);
 }
